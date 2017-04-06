@@ -1,0 +1,12 @@
+{
+    "background_color": "#f2f5f7",
+    "name": "OctomerCMS Juicy Theme",
+    "short_name": "Juicy",
+    "display": "standalone",
+    "icons": [{
+        "src": "/themes/juicy/assets/icons/apple-touch-icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }],
+    "orientation": "portrait"
+}

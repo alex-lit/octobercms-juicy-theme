@@ -1,0 +1,56 @@
+description = "Section <head></head>"
+
+[viewBag]
+==
+<?php
+function onStart() {}
+?>
+==
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+<link rel="manifest" href="{{ 'manifest.json' | theme }}">
+<meta name="theme-color" content="{{ this.theme.site_color }}">
+
+<title>{% if this.page.meta_title %}{{ this.page.meta_title }}{% else %}{{ this.page.title }}{% endif %}</title>
+<meta name="description" content="{% if this.page.meta_description %}{{ this.page.meta_description }}{% else %}{{ this.page.description }}{% endif %}">
+
+{# Open Graph #}
+<meta property = "og:description" content = "{% if this.page.meta_description %}{{ this.page.meta_description }}{% else %}{{ this.page.description }}{% endif %}">
+<meta property = "og:image"       content = "{% if ogImage %}{{ ogImage }}{% else %}{{ this.theme.getPreviewImageUrl() }}{% endif %}">
+<meta property = "og:locale"      content = "en_EN">
+<meta property = "og:site_name"   content = "{{ this.theme.config.description }}">
+<meta property = "og:title"       content = "{% if this.page.meta_title %}{{ this.page.meta_title }}{% else %}{{ this.page.title }}{% endif %}">
+<meta property = "og:type"        content = "website">
+<meta property = "og:url"         content = "/">
+
+{# STYLES #}
+<link href="{{ '/assets/styles/vendor.css' | theme }}" rel="stylesheet" async>
+<link href="{{ '/assets/styles/app.css' | theme }}" rel="stylesheet">
+
+{# COMPONENTS STYLES #}
+{% if styles %}{% styles %}{% endif %}
+
+{# ICONS #}
+<link rel="shortcut icon" href="{{ 'assets/icons/favicon.ico' | theme }}" type="image/x-icon">
+<meta name="application-name"                content="{{ this.theme.config.name }}">
+<meta name="msapplication-TileColor"         content="{{ this.theme.site_color }}">
+<meta name="msapplication-TileImage"         content="{{ 'assets/icons/mstile-144x144.png' | theme }}">
+<meta name="msapplication-square70x70logo"   content="{{ 'assets/icons/mstile-70x70.png' | theme }}">
+<meta name="msapplication-square150x150logo" content="{{ 'assets/icons/mstile-150x150.png' | theme }}">
+<meta name="msapplication-wide310x150logo"   content="{{ 'assets/icons/mstile-310x150.png' | theme }}">
+<meta name="msapplication-square310x310logo" content="{{ 'assets/icons/mstile-310x310.png' | theme }}">
+<link rel="icon" type="image/png" sizes="128x128" href="{{ 'assets/icons/favicon-128.png' | theme }}">
+<link rel="icon" type="image/png" sizes="196x196" href="{{ 'assets/icons/favicon-196x196.png' | theme }}">
+<link rel="icon" type="image/png" sizes="96x96"   href="{{ 'assets/icons/favicon-96x96.png' | theme }}">
+<link rel="icon" type="image/png" sizes="32x32"   href="{{ 'assets/icons/favicon-32x32.png' | theme }}">
+<link rel="icon" type="image/png" sizes="16x16"   href="{{ 'assets/icons/favicon-16x16.png' | theme }}">
+<link rel="apple-touch-icon-precomposed" sizes="57x57"   href="{{ 'assets/icons/apple-touch-icon-57x57.png' | theme }}">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ 'assets/icons/apple-touch-icon-114x114.png' | theme }}">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"   href="{{ 'assets/icons/apple-touch-icon-72x72.png' | theme }}">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ 'assets/icons/apple-touch-icon-144x144.png' | theme }}">
+<link rel="apple-touch-icon-precomposed" sizes="60x60"   href="{{ 'assets/icons/apple-touch-icon-60x60.png' | theme }}">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ 'assets/icons/apple-touch-icon-120x120.png' | theme }}">
+<link rel="apple-touch-icon-precomposed" sizes="76x76"   href="{{ 'assets/icons/apple-touch-icon-76x76.png' | theme }}">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ 'assets/icons/apple-touch-icon-152x152.png' | theme }}">

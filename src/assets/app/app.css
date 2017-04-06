@@ -1,0 +1,287 @@
+/*
+|--------------------------------------------------------------------------
+| VARIABLES (var())
+|--------------------------------------------------------------------------
+|
+| Объявление переменных
+|
+*/
+
+:root {
+    --colorPlaceholder: #a8a8a8;
+    --colorPrimary: #ff4b7b;
+    --colorTextSelection: #f9f9f9;
+    --colorText: #000;
+    --colorOverlay: #6e6e6e;
+    --fontFamily: OpenSansRegular, Arial, sans-serif;
+    --shadowOutset: 0 5px 30px rgba(35, 31, 32, 0.15);
+    --transformScale: scale(1.1);
+    --transitionDuration: .5s;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| MEDIA
+|--------------------------------------------------------------------------
+|
+| Объявления кастомных медиавыражений
+|
+*/
+
+:root {
+    @custom-media --laptop (max-width: 1650px);
+    @custom-media --tablet (max-width: 1170px);
+    @custom-media --mobile (max-width: 750px);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| NATIVE ELEMENTS
+|--------------------------------------------------------------------------
+|
+| Кастомизация нативных элементов браузера
+|
+*/
+
+::-moz-selection {
+    background-color: var(--colorPrimary);
+    color: var(--colorTextSelection);
+}
+
+::selection {
+    background-color: var(--colorPrimary);
+    color: var(--colorTextSelection);
+}
+
+-webkit-::input-placeholder {
+    color: var(--colorPlaceholder);
+}
+
+::-moz-placeholder {
+    color: var(--colorPlaceholder);
+}
+
+:-moz-placeholder {
+    color: var(--colorPlaceholder);
+}
+
+:-ms-input-placeholder {
+    color: var(--colorPlaceholder);
+}
+
+:focus::-webkit-input-placeholder,
+:focus::-moz-placeholder,
+:focus:-moz-placeholder,
+:focus:-ms-input-placeholder {
+    /*color: transparent;*/
+}
+
+::-moz-selection,
+::selection {
+    background-color: var(--colorPrimary);
+    color: var(--colorTextSelection);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+input[type=number] & {
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| RESET
+|--------------------------------------------------------------------------
+|
+| Сброс стилей браузера (для нормализации используется вендор)
+|
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    outline-color: transparent;
+    font-family: var(--fontFamily);
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+    transition: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+address,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+}
+
+html {
+    min-width: 320px;
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right, #ff4b7b 0%, #ffd133 100%);
+    color: var(--colorText);
+}
+
+body {
+    padding: 0;
+    min-height: inherit;
+    width: 100%;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer !important;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer !important;
+}
+
+a,
+button,
+input,
+textarea {
+    font-family: inherit;
+    transition: var(--transitionDuration);
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| VENDORS
+|--------------------------------------------------------------------------
+|
+| Стилизация вендорных элементов
+|
+*/
+
+
+/* tipso */
+
+.tipso_bubble,
+.tipso_title {
+    padding: 0;
+    border-radius: 0 !important;
+    text-align: left;
+    font-size: .8rem;
+    line-height: 1.2em;
+}
+
+.tipso_title,
+.tipso_content {
+    padding: .5em;
+}
+
+
+/* remodal */
+
+.remodal {
+    padding: 0;
+    max-width: 360px;
+    width: 100% !important;
+    color: initial;
+}
+
+.remodal-bg {
+    transition-duration: var(--transitionDuration);
+}
+
+.remodal-overlay {
+    background-image: url(../images/global-close-na.svg), url(../images/global-overlay.jpg);
+    background-attachment: fixed, fixed;
+    background-position: calc(100% - 2rem) 1rem, center;
+    background-size: auto, auto;
+    background-repeat: no-repeat, repeat;
+    opacity: 1;
+}
+
+.remodal-wrapper:after {
+    display: inline-block;
+}
+
+.remodal.remodal-is-opening,
+.remodal.remodal-is-closing {
+    animation-duration: .5s;
+}
+
+
+/* lightcase */
+
+#lightcase-overlay {
+    background-color: var(--colorOverlay);
+    opacity: 1;
+}
+
+.lightcase-icon-close:before {
+    color: #fff;
+}
+
+.lightcase-icon-prev:before {
+    color: #fff;
+}
+
+.lightcase-icon-next:before {
+    color: #fff;
+}
+
+#lightcase-case[data-lc-type=image] #lightcase-content,
+#lightcase-case[data-lc-type=video] #lightcase-content {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+
+/* legitripple */
+
+[data-ripple] & {}
+
+[data-ripple]:hover {}
+
+[data-ripple] .legitRipple-ripple {
+    background: rgba(221, 221, 221, .4) !important;
+}

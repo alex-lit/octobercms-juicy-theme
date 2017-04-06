@@ -1,0 +1,19 @@
+description = "Скрипты в конце шаблона"
+
+[viewBag]
+
+==
+<?php
+function onStart() {}
+?>
+==
+{# SCRIPTS #}
+
+<script src="{{ 'assets/scripts/vendor.js' | theme }}"></script>
+<script src="{{ 'assets/scripts/app.js' | theme }}"></script>
+
+{# RAMEWORK EXTRAS #}
+{#{% framework extras %}#}
+
+{# COMPONENTS SCRIPTS #}
+{% if scripts %}{% scripts %}{% endif %}

@@ -1,0 +1,10 @@
+title = "Error page (500)"
+url = "/error"
+layout = "main"
+description = "Ошибка сервера"
+is_hidden = 0
+==
+{% partial 'error'
+	title=':('
+	description='ошибка сервера'
+%}

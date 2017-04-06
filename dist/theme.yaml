@@ -1,0 +1,159 @@
+name:        'Juicy'
+description: 'OctoberCMS Juicy Theme'
+author:      'Alexey Litovchenko'
+homepage:    'https://web2easy.ru'
+code:        ''
+#require:
+#    - Acme.User
+#    - Acme.Blog
+
+#--------------------------------------------------------------------------
+# THEME CONFIGURATION
+#--------------------------------------------------------------------------
+#
+# Конфигурация темы, доступная из панели администрирования
+#
+
+form:
+    fields:
+
+        # Основные поля
+
+        site_config_desc:
+            label:   OctoberCMS Juicy Theme Options
+            type:    section
+            comment: Настройте тему по своим потребностям. Если требуется подключить сторонние скрипты, стили или метеданные до добавьте их в соответстующие поля во вкладке "Код".
+
+    tabs:
+        fields:
+
+           #Слайдшоу
+
+            slideshow_title:
+                label:   Заголовок
+                type:    text
+                comment:
+                default: 'Жидкая резина PlastiDip в Севастополе'
+                tab: Слайдшоу
+
+            slideshow_subtitle:
+                label:   Подзаголовок
+                type:    text
+                comment:
+                default: 'жидкий винил Plasti Dip для покраски автомобилей'
+                tab: Слайдшоу
+
+            slideshow_item:
+                type:   repeater
+                prompt: Добавить слайд
+                form:
+                    fields:
+                        slideshow_image:
+                            label: Фото
+                            type:  mediafinder
+                            mode:  image
+                tab: Слайдшоу
+
+
+          #Портфолио
+
+            portfolio_title:
+                label:   Заголовок
+                type:    text
+                comment:
+                default: 'Последние работы'
+                tab: Портфолио
+
+            portfolio_desc:
+                label:   Текст
+                type:    richeditor
+                comment:
+                default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, non expedita perspiciatis ex nostrum soluta neque natus veniam dignissimos consequuntur illo sed mollitia laboriosam, aspernatur eum. Alias dolorem, soluta nostrum.'
+                tab: Портфолио
+
+            portfolio_item:
+                type:   repeater
+                prompt: Добавить фото
+                form:
+                    fields:
+                        portfolio_image:
+                            label: Фото
+                            type:  mediafinder
+                            mode:  image
+                tab: Портфолио
+
+
+          # О покрытии
+
+            about_title:
+                label:   Заголовок
+                type:    text
+                comment:
+                default: 'О покрытии'
+                tab: О покрытии
+
+            about_desc:
+                label:   Текст
+                type:    richeditor
+                comment:
+                default: 'Использование жидкой резины для авто позволило не только сделать внешний вид кузова более привлекательным и ярким, но и защитить от коррозии некоторые его детали. Благодаря тому, что Plasti Dip производится на основе синтетических резин, не содержит вредных органических соединений и отличается отличными эксплуатационными свойствами, данная краска заслуженно признана инновационной и пользуется большим спросом у владельцев автомобилей.'
+                tab: О покрытии
+
+
+          #Отзывы
+
+            reviews_header:
+                label:   Отзывы
+                type:    section
+                comment: Добавление отзывов
+                tab:     Отзывы
+
+            reviews_item:
+                type:   repeater
+                prompt: Добавить отзыв
+                form:
+                    fields:
+                        reviews_image:
+                            label: Фото
+                            type:  mediafinder
+                            mode:  image
+                            span:  left
+                        reviews_vk:
+                            label: Ссылка на Вконтакте
+                            type:  text
+                            span:  right
+                        reviews_od:
+                            label: Ссылка на Facebook
+                            type:  text
+                            span:  right
+                        reviews_fb:
+                            label: Ссылка на Одноклассники
+                            type:  text
+                            span:  right
+                        reviews_title:
+                            label: Имя человека или компании, оставившей отзыв
+                            type:  text
+                        reviews_site:
+                            label: Ссылка на сайт
+                            type:  text
+                        reviews_pdf:
+                            label: PDF
+                            type: mediafinder
+                            mode: file
+                        reviews_content:
+                            label: Текст отзыва
+                            type:  richeditor
+                            size:  huge
+                tab: Отзывы
+
+#--------------------------------------------------------------------------
+# FAQ
+#--------------------------------------------------------------------------
+#
+# Ссылки на документацию
+#
+# Field options
+# https://octobercms.com/docs/backend/forms#form-field-options
+#
+# Field types
+# https://octobercms.com/docs/backend/forms#field-types

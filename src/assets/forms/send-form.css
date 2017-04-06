@@ -1,0 +1,111 @@
+/*
+[data-form] {
+    & input {
+        padding: 0 20px;
+        width: 100%;
+        height: 50px;
+        border: 1px solid #e6e6e6;
+        background-color: #fff;
+        color: #808080;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5em;
+        &:hover {}
+        &:focus {
+            border-color: var(--colorPrimary);
+        }
+    }
+    & textarea {
+        padding: 20px;
+        width: 100%;
+        height: 110px;
+        border: 1px solid #e6e6e6;
+        background-color: #fff;
+        color: #808080;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5em;
+        resize: vertical;
+        &:hover {}
+        &:focus {
+            border-color: var(--colorPrimary);
+        }
+    }
+    & .selectric-wrapper {
+        width: 100%;
+        transition-duration: var(--transitionDuration);
+        &.selectric-open {
+            box-shadow: var( --shadowOutset);
+        }
+        &:hover {
+            box-shadow: var( --shadowOutset);
+        }
+        & .selectric {
+            width: 100%;
+            border: 1px solid #e6e6e6;
+            border-radius: 3px;
+            background-color: #fff;
+            & .label {
+                display: block;
+                margin: 0;
+                padding: 0 70px 0 20px;
+                height: auto;
+                color: #808080;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 50px;
+            }
+            & .button {
+                width: 50px;
+                height: 50px;
+                background-image: url(../images/forms-arr.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        & .selectric-items {
+            border: none;
+            border-radius: 3px;
+            background-color: #ffffff;
+            box-shadow: inset 0 0 0 1px #e6e6e6, var( --shadowOutset);
+            & li {
+                padding: 10px 20px;
+                font-weight: 400;
+                font-size: 14px;
+                transition-duration: var(--transitionDuration);
+                &:first-child {
+                    border-radius: 3px 3px 0 0;
+                }
+                &:last-child {
+                    border-radius: 0 0 3px 3px;
+                }
+                &:hover {
+                    background-color: var(--colorPrimary);
+                    color: #fff;
+                }
+                &.selected {
+                    background-color: var(--colorPrimary);
+                    color: #fff;
+                }
+                &.disabled {
+                    color: #808080;
+                }
+            }
+        }
+    }
+}
+
+[data-form-hidden-placeholder]::-webkit-input-placeholder,
+[data-form-hidden-placeholder]::-moz-placeholder,
+[data-form-hidden-placeholder]:-moz-placeholder,
+[data-form-hidden-placeholder]:-ms-input-placeholder {
+    color: transparent;
+}
+
+[data-form-field-invalid] {
+    border-color: #f44336 !important;
+}
+*/

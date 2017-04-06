@@ -1,0 +1,6 @@
+*.zip
+**/*.db
+.spec
+incoming/
+bower_components/*
+node_modules/*

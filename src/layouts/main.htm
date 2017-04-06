@@ -1,0 +1,40 @@
+description = "Шаблон главной страницы"
+
+==
+<!DOCTYPE html>
+
+<!--
+	{#
+    Developer:          {{ this.theme.config.author }}
+	Homepage:           {{ this.theme.config.homepage }}
+    #}
+
+	Theme:              {{ this.theme.config.name }}
+	Description:        {{ this.theme.config.description }}
+
+	Layout:             {{ this.layout.id }}
+	Layput description: {{ this.layout.description }}
+
+	Page:               {{ this.page.id }}
+	Page title:         {{ this.page.title }}
+	Page description:   {{ this.page.description }}
+-->
+
+<html lang="ru" data-layout="{{ this.layout.id }}" data-page="{{ this.page.id }}">
+	<head>
+
+		{% partial 'head' %}
+
+	</head>
+	<body class="animsition" data-page-preloader>
+
+        <div id="app">
+
+		    {% page %}
+
+        </div>
+
+		{% partial 'scripts' %}
+
+	</body>
+</html>

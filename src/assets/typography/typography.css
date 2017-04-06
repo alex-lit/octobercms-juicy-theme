@@ -1,0 +1,182 @@
+/*
+|--------------------------------------------------------------------------
+| TYPOGRAPHY
+|--------------------------------------------------------------------------
+|
+| Стили типографики
+|
+*/
+
+.typography {
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.5em;
+    font-size: 14px;
+}
+
+.typography h1 {
+    margin-top: .5em;
+    margin-bottom: 1.5em;
+    font-size: 2.4em;
+    line-height: 1.1em;
+}
+
+.typography h2 {
+    margin-top: 1.44em;
+    margin-bottom: .72em;
+    font-size: 1.8em;
+    line-height: 1.44em;
+}
+
+.typography h3 {
+    margin-top: .94em;
+    margin-bottom: .94em;
+    font-size: 1.35em;
+    line-height: 1.89em;
+}
+
+.typography h4,
+.typography h5,
+.typography h6 {
+    margin-top: 1.28em;
+    margin-bottom: 1.28em;
+    font-size: 1em;
+    line-height: 1.28em;
+}
+
+.typography p,
+.typography ul,
+.typography ol,
+.typography pre,
+.typography table,
+.typography blockquote {
+    margin-top: 1.28em;
+    margin-bottom: 1.28em;
+}
+
+.typography ul,
+.typography ol {
+    margin-left: 2.56em;
+}
+
+.typography hr {
+    margin: -1px 0;
+    border: 1px solid;
+}
+
+.typography ul ul,
+.typography ol ol,
+.typography ul ol,
+.typography ol ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.typography b,
+.typography strong,
+.typography em,
+.typography small,
+.typography code {
+    line-height: 1;
+}
+
+.typography b,
+.typography strong,
+.typography em {
+    font-weight: 700;
+}
+
+.typography sup,
+.typography sub {
+    position: relative;
+    top: -.4em;
+    vertical-align: baseline;
+}
+
+.typography sub {
+    top: .4em;
+}
+
+.typography table {
+    overflow-y: scroll;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.typography td,
+.typography th {
+    padding: 6px;
+    border: 1px solid #b8b8b8;
+}
+
+.typography th {
+    font-weight: 700;
+}
+
+.typography blockquote,
+.typography cite {
+    padding-left: 1.28em;
+    border-left: 6px solid #b8b8b8;
+}
+
+
+/* Custom */
+
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4,
+.typography h5,
+.typography h6 {}
+
+.typography h1:after,
+.typography h2:after,
+.typography h3:after,
+.typography h4:after,
+.typography h5:after,
+.typography h6:after {}
+
+.typography ul,
+.typography ol {
+    /*margin-left: 2.56em;*/
+    list-style: none;
+}
+
+.typography li {
+    padding-top: .5em;
+    padding-right: 2em;
+    padding-bottom: .5em;
+    padding-left: 17px;
+    width: 100%;
+    background-image: url(../images/typography-li-icon.png);
+    background-position: left 1em;
+    background-repeat: no-repeat;
+}
+
+.typography strong {}
+
+.typography span {
+    font-size: inherit;
+}
+
+.typography a {
+    color: #39b9b8;
+}
+
+.typography a:hover {
+    color: #39b9b8;
+    text-decoration: underline;
+}
+
+.typography iframe {
+    width: 100%;
+    height: 400px;
+    margin-top: 1.28em;
+    margin-bottom: 1.28em;
+    border: none;
+}
+
+.typography img {
+    max-width: 100%;
+    height: auto;
+}

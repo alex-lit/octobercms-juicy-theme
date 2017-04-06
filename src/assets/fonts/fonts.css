@@ -1,0 +1,39 @@
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'lightcase';
+    src: url("../fonts/Lightcase/lightcase.eot?55356177");
+    src: url("../fonts/Lightcase/lightcase.eot?55356177#iefix") format("embedded-opentype"), url("../fonts/Lightcase/lightcase.woff?55356177") format("woff"), url("../fonts/Lightcase/lightcase.ttf?55356177") format("truetype"), url("../fonts/Lightcase/lightcase.svg?55356177#lightcase") format("svg");
+}
+
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: "OpenSansRegular";
+    src: url("../fonts/OpenSansRegular/OpenSansRegular.eot");
+    src: url("../fonts/OpenSansRegular/OpenSansRegular.eot?#iefix")format("embedded-opentype"), url("../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"), url("../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+}
+
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: "OpenSansLight";
+    src: url("../fonts/OpenSansLight/OpenSansLight.eot");
+    src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix")format("embedded-opentype"), url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"), url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: "OpenSansBold";
+    src: url("../fonts/OpenSansBold/OpenSansBold.eot");
+    src: url("../fonts/OpenSansBold/OpenSansBold.eot?#iefix")format("embedded-opentype"), url("../fonts/OpenSansBold/OpenSansBold.woff") format("woff"), url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: "OpenSansExtraBold";
+    src: url("../fonts/OpenSansExtraBold/OpenSansExtraBold.eot");
+    src: url("../fonts/OpenSansExtraBold/OpenSansExtraBold.eot?#iefix")format("embedded-opentype"), url("../fonts/OpenSansExtraBold/OpenSansExtraBold.woff") format("woff"), url("../fonts/OpenSansExtraBold/OpenSansExtraBold.ttf") format("truetype");
+}
