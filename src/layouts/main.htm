@@ -4,10 +4,8 @@ description = "Шаблон главной страницы"
 <!DOCTYPE html>
 
 <!--
-	{#
     Developer:          {{ this.theme.config.author }}
 	Homepage:           {{ this.theme.config.homepage }}
-    #}
 
 	Theme:              {{ this.theme.config.name }}
 	Description:        {{ this.theme.config.description }}
@@ -20,7 +18,7 @@ description = "Шаблон главной страницы"
 	Page description:   {{ this.page.description }}
 -->
 
-<html lang="ru" data-layout="{{ this.layout.id }}" data-page="{{ this.page.id }}">
+<html lang="en" data-layout="{{ this.layout.id }}" data-page="{{ this.page.id }}">
 	<head>
 
 		{% partial 'head' %}

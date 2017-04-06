@@ -154,10 +154,95 @@ jQuery(document).ready(function ($) {
         return false;
     });
 });
+Vue.component('about-us', {
+    delimiters: ['[[', ']]'],
+    template: require('./about-us/about-us.tpl'),
+    props: ['title', 'description', 'items']
+});
+Vue.component('contacts', {
+    delimiters: ['[[', ']]'],
+    template: require('./contacts/contacts.tpl'),
+    props: ['title', 'subtitle', 'items', 'backgroundColor', 'contentBackgroundColor']
+});
 jQuery(document).ready(function ($) {
 
     // comment_text (VENDOR: vendor_name)
 
+});
+Vue.component('form-footer', {
+    delimiters: ['[[', ']]'],
+    template: require('./form-footer/form-footer.tpl'),
+    props: []
+});
+Vue.component('navigation', {
+    delimiters: ['[[', ']]'],
+    template: require('./navigation/navigation.tpl'),
+    methods: {
+        fixMenu: function fixMenu() {
+            if ($(document).scrollTop() != 0) {
+                $('#menu').addClass('menu--fixed');
+            } else {
+                $('#menu').removeClass('menu--fixed');
+            }
+        }
+    },
+    mounted: function mounted() {
+
+        var vm = this;
+
+        vm.fixMenu();
+        $(window).scroll(function () {
+            vm.fixMenu();
+        });
+    }
+});
+Vue.component('portfolio', {
+    delimiters: ['[[', ']]'],
+    template: require('./portfolio/portfolio.tpl'),
+    props: ['title', 'description', 'images', 'color']
+});
+Vue.component('promo', {
+    delimiters: ['[[', ']]'],
+    template: require('./promo/promo.tpl'),
+    props: ['title', 'subtitle', 'buttonText', 'images'],
+    mounted: function mounted() {
+        var promoSlideshow = new Swiper('.promo [data-slideshow]', {
+            paginationClickable: true,
+            spaceBetween: 0,
+            centeredSlides: true,
+            autoplay: 4000,
+            autoplayDisableOnInteraction: false,
+            loop: true,
+            speed: 1500,
+            effect: 'fade'
+        });
+    }
+});
+Vue.component('reviews', {
+    delimiters: ['[[', ']]'],
+    template: require('./reviews/reviews.tpl'),
+    props: ['title', 'items', 'color'],
+    mounted: function mounted() {
+        var vm = this;
+
+        var revievsSlideshow = new Swiper('.reviews [data-slideshow]', {
+            pagination: '.reviews [data-pagination]',
+            paginationClickable: true,
+            autoplay: 4000,
+            loop: true,
+            speed: 1500,
+            autoplayDisableOnInteraction: false,
+            grabCursor: true
+        });
+    }
+});
+Vue.component('site-footer', {
+    delimiters: ['[[', ']]'],
+    template: require('./site-footer/site-footer.tpl')
+});
+Vue.component('map-widget', {
+    delimiters: ['[[', ']]'],
+    template: require('./map-widget/map-widget.tpl')
 });
 var App = new Vue({
     delimiters: ['[[', ']]'],

@@ -10,141 +10,218 @@ code:        ''
 #--------------------------------------------------------------------------
 # THEME CONFIGURATION
 #--------------------------------------------------------------------------
-#
-# Конфигурация темы, доступная из панели администрирования
-#
 
 form:
     fields:
 
-        # Основные поля
+        # Site
 
         site_config_desc:
             label:   OctoberCMS Juicy Theme Options
             type:    section
-            comment: Настройте тему по своим потребностям. Если требуется подключить сторонние скрипты, стили или метеданные до добавьте их в соответстующие поля во вкладке "Код".
+            comment: Clean, simple and responsive landing page.
 
     tabs:
         fields:
 
-           #Слайдшоу
+           #Promo
 
-            slideshow_title:
-                label:   Заголовок
+            promo_title:
+                label:   Title
                 type:    text
                 comment:
-                default: 'Жидкая резина PlastiDip в Севастополе'
-                tab: Слайдшоу
+                default: 'OctoberCMS Juicy Theme'
+                tab: Promo
 
-            slideshow_subtitle:
-                label:   Подзаголовок
+            promo_subtitle:
+                label:   Subtitle
                 type:    text
                 comment:
-                default: 'жидкий винил Plasti Dip для покраски автомобилей'
-                tab: Слайдшоу
+                default: 'Clean, simple and responsive landing page'
+                tab: Promo
 
-            slideshow_item:
+            promo_button_text:
+                label:   Button text
+                type:    text
+                comment:
+                default: 'Read more!'
+                tab: Promo
+
+            promo_item:
                 type:   repeater
-                prompt: Добавить слайд
+                prompt: Add image
                 form:
                     fields:
-                        slideshow_image:
-                            label: Фото
+                        promo_image:
+                            label: Image
                             type:  mediafinder
                             mode:  image
-                tab: Слайдшоу
+                tab: Promo
 
 
-          #Портфолио
+          #Portfolio
 
             portfolio_title:
-                label:   Заголовок
+                label:   Title
                 type:    text
                 comment:
-                default: 'Последние работы'
-                tab: Портфолио
+                default: 'Portfolio'
+                tab: Portfolio
 
-            portfolio_desc:
-                label:   Текст
+            portfolio_description:
+                label:   Desciption
                 type:    richeditor
                 comment:
                 default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, non expedita perspiciatis ex nostrum soluta neque natus veniam dignissimos consequuntur illo sed mollitia laboriosam, aspernatur eum. Alias dolorem, soluta nostrum.'
-                tab: Портфолио
+                tab: Portfolio
+
+            portfolio_color:
+              label: Background color
+              type: colorpicker
+              default: '#3498db'
+              tab: Portfolio
 
             portfolio_item:
                 type:   repeater
-                prompt: Добавить фото
+                prompt: Add image
                 form:
                     fields:
                         portfolio_image:
-                            label: Фото
+                            label: Image
                             type:  mediafinder
                             mode:  image
-                tab: Портфолио
+                tab: Portfolio
 
 
-          # О покрытии
+          # About Us
 
-            about_title:
-                label:   Заголовок
+            about_us_title:
+                label:   Title
                 type:    text
                 comment:
-                default: 'О покрытии'
-                tab: О покрытии
+                default: 'Title'
+                tab: About us
 
-            about_desc:
-                label:   Текст
+            about_us_description:
+                label:   Description
                 type:    richeditor
                 comment:
-                default: 'Использование жидкой резины для авто позволило не только сделать внешний вид кузова более привлекательным и ярким, но и защитить от коррозии некоторые его детали. Благодаря тому, что Plasti Dip производится на основе синтетических резин, не содержит вредных органических соединений и отличается отличными эксплуатационными свойствами, данная краска заслуженно признана инновационной и пользуется большим спросом у владельцев автомобилей.'
-                tab: О покрытии
+                default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, non expedita perspiciatis ex nostrum soluta neque natus veniam dignissimos consequuntur illo sed mollitia laboriosam, aspernatur eum. Alias dolorem, soluta nostrum.'
+                tab: About us
 
+            about_us_item:
+                type:   repeater
+                prompt: Add item
+                form:
+                    fields:
+                        item_icon:
+                            label: Icon
+                            type:  mediafinder
+                            mode:  image
+                        item_title:
+                            label:   Title
+                            type:    text
+                            comment:
+                            default: 'Title'
+                        item_text:
+                            label:   Text
+                            type:    richeditor
+                            comment:
+                            default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+                tab: About us
 
-          #Отзывы
+          #Reviews
 
-            reviews_header:
-                label:   Отзывы
-                type:    section
-                comment: Добавление отзывов
-                tab:     Отзывы
+            reviews_title:
+                label:   Title
+                type:    text
+                comment:
+                default: Reviews title
+                tab:     Reviews
+
+            reviews_color:
+              label: Background color
+              type: colorpicker
+              default: 'red'
+              tab: Reviews
 
             reviews_item:
                 type:   repeater
-                prompt: Добавить отзыв
+                prompt: Add review
                 form:
                     fields:
-                        reviews_image:
-                            label: Фото
-                            type:  mediafinder
-                            mode:  image
-                            span:  left
-                        reviews_vk:
-                            label: Ссылка на Вконтакте
-                            type:  text
-                            span:  right
-                        reviews_od:
-                            label: Ссылка на Facebook
-                            type:  text
-                            span:  right
-                        reviews_fb:
-                            label: Ссылка на Одноклассники
-                            type:  text
-                            span:  right
-                        reviews_title:
-                            label: Имя человека или компании, оставившей отзыв
-                            type:  text
-                        reviews_site:
-                            label: Ссылка на сайт
-                            type:  text
-                        reviews_pdf:
-                            label: PDF
-                            type: mediafinder
-                            mode: file
-                        reviews_content:
-                            label: Текст отзыва
-                            type:  richeditor
-                            size:  huge
-                tab: Отзывы
+                        text:
+                            label:   Text
+                            type:    richeditor
+                            default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+                            span:    right
+                        avatar:
+                            label:   Avatar
+                            type:    mediafinder
+                            mode:    image
+                            span:    left
+                        name:
+                            label:   Name
+                            type:    text
+                            default: 'John Doe'
+                            span:    left
+                        info:
+                            label:   Info
+                            type:    text
+                            default: 'Best client'
+                            span:    left
+                tab: Reviews
+
+          #Contacts
+
+            contacts_title:
+                label:   Title
+                type:    text
+                comment:
+                default: 'Contacts title'
+                span: left
+                tab:     Contacts
+
+            contacts_subtitle:
+                label:   Subtitle
+                type:    text
+                comment:
+                default: 'Contacts subtitle'
+                span: left
+                tab:     Contacts
+
+            contacts_background_color:
+                label: Background color
+                type: colorpicker
+                default: 'red'
+                span: left
+                tab: Contacts
+
+            contacts_content_background_color:
+                label: Content background color
+                type: colorpicker
+                default: 'red'
+                span: left
+                tab: Contacts
+
+            contacts_item:
+                type:   repeater
+                prompt: Add item
+                form:
+                    fields:
+                        icon:
+                            label:   Icon
+                            type:    mediafinder
+                            mode:    image
+                        title:
+                            label:   Title
+                            type:    text
+                            default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+                        text:
+                            label:   Text
+                            type:    codeeditor
+                            mode: html
+                tab: Contacts
 
 #--------------------------------------------------------------------------
 # FAQ

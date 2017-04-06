@@ -7,30 +7,77 @@ meta_title       = "BABY WATCH"
 meta_description = "Крутяцкие часы для детей"
 ==
 
-<promo></promo>
+<navigation></navigation>
 
-<models></models>
+<promo
+    title       = "{{ this.theme.promo_title }}"
+    subtitle    = "{{ this.theme.promo_subtitle }}"
+    button-text = "{{ this.theme.promo_button_text }}"
+    :images     = "[
+        {% for item in this.theme.promo_item %}
+            '{{ item.promo_image | media}}',
+        {% endfor %}
+    ]"
+></promo>
 
-<choose-model></choose-model>
+<portfolio
+    title       = "{{ this.theme.portfolio_title }}"
+    description = "{{ this.theme.portfolio_description }}"
+    color       = "{{ this.theme.portfolio_color}}"
+    :images     = "[
+        {% for item in this.theme.portfolio_item %}
+            '{{ item.portfolio_image | media}}',
+        {% endfor %}
+    ]"
+></portfolio>
 
-<original></original>
+<about-us
+    title       = "{{ this.theme.about_us_title }}"
+    description = "{{ this.theme.about_us_description }}"
+    :items      = "[
+        {% for item in this.theme.about_us_item %}
+            {
+                icon:  '{{ item.item_icon | media}}',
+                title: '{{ item.item_title }}',
+                text:  `{{ item.item_text | raw }}`
+            },
+        {% endfor %}
+    ]"
+></about-us>
 
-<need></need>
+<reviews
+    title  = "{{ this.theme.reviews_title }}"
+    color  = "{{ this.theme.reviews_color}}"
+    :items = "[
+        {% for item in this.theme.reviews_item %}
+            {
+                avatar: '{{ item.avatar | media}}',
+                name:   '{{ item.name }}',
+                info:   '{{ item.info }}',
+                text:   `{{ item.text | raw }}`
+            },
+        {% endfor %}
+    ]"
+></reviews>
 
-<options></options>
+<contacts
+    title                    = "{{ this.theme.contacts_title }}"
+    subtitle                 = "{{ this.theme.contacts_subtitle}}"
+    background-color         = "{{ this.theme.contacts_background_color }}"
+    content-background-color = "{{ this.theme.contacts_content_background_color }}"
+    :items = "[
+        {% for item in this.theme.contacts_item %}
+            {
+                icon:  '{{ item.icon | media }}',
+                title: '{{ item.title }}',
+                text:  `{{ item.text | raw }}`
+            },
+        {% endfor %}
+    ]"
+></contacts>
 
-<complect></complect>
+<map-widget></map-widget>
 
-<advantages></advantages>
+<form-footer></form-footer>
 
-<!--<gift></gift>-->
-
-<sertificates></sertificates>
-
-<work></work>
-
-<delivery>
-
-    <site-footer slot="delivery__footer-wrap"></site-footer>
-
-</delivery>
+<site-footer></site-footer>

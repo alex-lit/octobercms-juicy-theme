@@ -1,0 +1,113 @@
+.contacts {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 4rem 1rem 4rem;
+    text-align: center;
+    color: #fff;
+    background-color: #33373e;
+    & a {
+        color: #fff;
+        &:hover {
+            color: #33373e;
+        }
+    }
+}
+
+.contacts__content-wrap {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.contacts__title {
+    margin-bottom: 4rem;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.contacts__subtitle {
+    margin-bottom: 4rem;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.contacts__items-wrap {
+    display: flex;
+    width: 100%;
+    margin-bottom: -8rem;
+    padding: 2rem 0;
+    border-radius: 5px;
+    background-color: #ff6858;
+    flex-wrap: wrap;
+}
+
+.contacts__item {
+    width: calc(100% / 3);
+    padding: 8rem 2rem 2rem;
+    background-repeat: no-repeat;
+    background-position: center 2rem;
+    background-size: 3rem auto;
+}
+
+.contacts__item-title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.contacts__caption {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1120px) {
+    .contacts {}
+    .contacts__content-wrap {}
+    .contacts__title {}
+    .contacts__subtitle {}
+    .contacts__items-wrap {}
+    .contacts__item {
+        padding: 8rem 1rem 1rem;
+    }
+    .contacts__item--addr {
+        /* padding: 1rem; */
+    }
+    .contacts__item--phone {}
+    .contacts__item--mail {}
+    .contacts__item-title {
+        font-size: 2rem;
+    }
+    .contacts__caption {}
+    .contacts__lnk {}
+    .contacts__lnk:hover {}
+}
+
+@media screen and (max-width: 640px) {
+    .contacts {}
+    .contacts__content-wrap {}
+    .contacts__title {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+    .contacts__subtitle {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+    }
+    .contacts__items-wrap {
+        padding: 0;
+    }
+    .contacts__item {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .contacts__item--addr {}
+    .contacts__item--phone {}
+    .contacts__item--mail {}
+    .contacts__item-title {}
+    .contacts__caption {}
+    .contacts__lnk {}
+    .contacts__lnk:hover {}
+}

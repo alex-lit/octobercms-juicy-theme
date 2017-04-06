@@ -1,0 +1,109 @@
+.promo {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 480px;
+    background-color: #33373e;
+}
+
+.promo__title {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1120px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.promo__title-accent {
+    display: block;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 4rem black;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.promo__title-desc {
+    display: block;
+    margin-bottom: 4rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 4rem black;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.promo__btn {
+    padding: 1rem 2rem;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    background-color: transparent;
+    text-shadow: 0 0 4rem black;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.promo__btn:hover {
+    background-color: #ff6858;
+    box-shadow: 0 0 4rem #fc6656;
+}
+
+.promo__slideshow {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: .5;
+}
+
+.promo__slideshow-items-wrap {}
+
+.promo__slideshow-item {
+    height: 100vh;
+    min-height: 480px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media screen and (max-width: 1120px) {
+    .promo {}
+    .promo__title {}
+    .promo__title-accent {}
+    .promo__title-desc {}
+    .promo__btn {}
+    .promo__btn:hover {}
+    .promo__slideshow {}
+    .promo__slideshow-items-wrap {}
+    .promo__slideshow-item {}
+}
+
+@media screen and (max-width: 640px) {
+    .promo {}
+    .promo__title {}
+    .promo__title-accent {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .promo__title-desc {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+    }
+    .promo__btn {
+        font-size: 1rem;
+    }
+    .promo__btn:hover {}
+    .promo__slideshow {}
+    .promo__slideshow-items-wrap {}
+    .promo__slideshow-item {}
+}

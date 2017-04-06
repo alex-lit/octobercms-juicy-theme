@@ -63,12 +63,66 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports) {
+
+module.exports = "<article class=about-us id=about-us> <div class=about-us__content-wrap> <header class=about-us__tile>[[ title ]]</header> <div class=about-us__subtitle v-html=description></div> <div class=about-us__items-wrap> <figure v-for=\"item in items\" class=about-us__item> <div class=about-us__item-img :style=\"'background-image: url(' + item.icon + ');'\"></div> <p class=about-us__item-title>[[ item.title ]]</p> <figcaption class=about-us__item-desc v-html=item.text></figcaption> </figure> </div> </div> </article>";
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = "<address class=contacts id=contacts :style=\"'background-color: ' + backgroundColor + ';'\"> <div class=contacts__content-wrap> <header class=contacts__title>[[ title ]]</header> <p class=contacts__subtitle>[[ subtitle ]]</p> <div class=contacts__items-wrap :style=\"'background-color: ' + contentBackgroundColor + ';'\"> <figure v-for=\"item in items\" class=contacts__item :style=\"'background-image: url(' + item.icon + ');'\"> <p class=contacts__item-title>[[ item.title ]]</p> <figcaption class=contacts__caption v-html=65></figcaption> </figure> </div> </div> </address>";
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = "<!---->";
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = "<!---->";
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=navigation id=navigation data-scroll-offset> <div class=navigation__content-wrap> <a href=tel:+79788463955 class=navigation__logo>+7 (978) 846-39-55 Сергей</a> <ul class=navigation__items-wrap> <li class=navigation__item> <a href=#portfolio class=navigation__lnk data-ripple>Последние работы</a> </li> <li class=navigation__item> <a href=#about-us class=navigation__lnk data-ripple>О покрытии</a> </li> <li class=navigation__item> <a href=#reviews class=navigation__lnk data-ripple>Отзывы</a> </li> <li class=navigation__item> <a href=#contacts class=navigation__lnk data-ripple>Контакты</a> </li> </ul> </div> </nav>";
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = "<section class=portfolio id=portfolio> <div class=portfolio__content-wrap> <header class=portfolio__tile>[[ title ]]</header> <div class=portfolio__subtitle v-html=description></div> </div> <div class=portfolio__items-wrap :style=\"'background-color: '+ color + ';'\"> <figure v-for=\"image in images\" class=portfolio__item :style=\"'background-image: url(' + image + ');'\" :href=image data-rel=lightcase:portfolio data-portfolio-item data-ripple></figure> </div> </section>";
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = "<section class=promo id=promo> <header class=promo__title> <h1 class=promo__title-accent>[[ title ]]</h1> <span class=promo__title-desc>[[ subtitle ]]</span> <button class=promo__btn type=button href=#portfolio data-ripple>[[ buttonText ]]</button> </header> <div class=\"promo__slideshow / swiper-container\" data-slideshow> <div class=\"promo__slideshow-items-wrap / swiper-wrapper\"> <figure v-for=\"item in images\" class=\"promo__slideshow-item / swiper-slide\" :style=\"'background-image: url(' + item + ');'\"></figure> </div> </div> </section>";
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = "<section class=reviews id=reviews :style=\"'background-color: ' + color + ';'\"> <div class=reviews__content-wrap> <header class=reviews__title>[[ title ]]</header> <div class=\"reviews__slideshow / swiper-container\" data-slideshow> <div class=\"reviews__slideshow-items-wrap / swiper-wrapper\"> <figure v-for=\"item in items\" class=\"reviews__slideshow-item / swiper-slide\"> <div class=reviews__slideshow-item-img :style=\"'background-image: url(' + item.avatar + '); box-shadow: inset 0 0 0 3px ' + color + ', 0 0 0 10px rgba(255, 255, 255, 0.6);'\"></div> <strong class=reviews__slideshow-item-name>[[ item.name ]]</strong> <span class=reviews__slideshow-item-desc>[[ item.info ]]</span> <figcaption class=reviews__slideshow-item-caption v-html=item.text></figcaption> </figure> </div> <div class=\"reviews__slideshow-pagination / swiper-pagination\" data-pagination></div> </div> </div> </section>";
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = "<!---->";
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
 
 jQuery(document).ready(function ($) {
 
@@ -226,10 +280,95 @@ jQuery(document).ready(function ($) {
         return false;
     });
 });
+Vue.component('about-us', {
+    delimiters: ['[[', ']]'],
+    template: __webpack_require__(0),
+    props: ['title', 'description', 'items']
+});
+Vue.component('contacts', {
+    delimiters: ['[[', ']]'],
+    template: __webpack_require__(1),
+    props: ['title', 'subtitle', 'items', 'backgroundColor', 'contentBackgroundColor']
+});
 jQuery(document).ready(function ($) {
 
     // comment_text (VENDOR: vendor_name)
 
+});
+Vue.component('form-footer', {
+    delimiters: ['[[', ']]'],
+    template: __webpack_require__(2),
+    props: []
+});
+Vue.component('navigation', {
+    delimiters: ['[[', ']]'],
+    template: __webpack_require__(4),
+    methods: {
+        fixMenu: function fixMenu() {
+            if ($(document).scrollTop() != 0) {
+                $('#menu').addClass('menu--fixed');
+            } else {
+                $('#menu').removeClass('menu--fixed');
+            }
+        }
+    },
+    mounted: function mounted() {
+
+        var vm = this;
+
+        vm.fixMenu();
+        $(window).scroll(function () {
+            vm.fixMenu();
+        });
+    }
+});
+Vue.component('portfolio', {
+    delimiters: ['[[', ']]'],
+    template: __webpack_require__(5),
+    props: ['title', 'description', 'images', 'color']
+});
+Vue.component('promo', {
+    delimiters: ['[[', ']]'],
+    template: __webpack_require__(6),
+    props: ['title', 'subtitle', 'buttonText', 'images'],
+    mounted: function mounted() {
+        var promoSlideshow = new Swiper('.promo [data-slideshow]', {
+            paginationClickable: true,
+            spaceBetween: 0,
+            centeredSlides: true,
+            autoplay: 4000,
+            autoplayDisableOnInteraction: false,
+            loop: true,
+            speed: 1500,
+            effect: 'fade'
+        });
+    }
+});
+Vue.component('reviews', {
+    delimiters: ['[[', ']]'],
+    template: __webpack_require__(7),
+    props: ['title', 'items', 'color'],
+    mounted: function mounted() {
+        var vm = this;
+
+        var revievsSlideshow = new Swiper('.reviews [data-slideshow]', {
+            pagination: '.reviews [data-pagination]',
+            paginationClickable: true,
+            autoplay: 4000,
+            loop: true,
+            speed: 1500,
+            autoplayDisableOnInteraction: false,
+            grabCursor: true
+        });
+    }
+});
+Vue.component('site-footer', {
+    delimiters: ['[[', ']]'],
+    template: __webpack_require__(8)
+});
+Vue.component('map-widget', {
+    delimiters: ['[[', ']]'],
+    template: __webpack_require__(3)
 });
 var App = new Vue({
     delimiters: ['[[', ']]'],

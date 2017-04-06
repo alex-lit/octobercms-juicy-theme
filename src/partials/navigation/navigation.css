@@ -1,0 +1,119 @@
+.navigation {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 1rem;
+    transition: .3s;
+    background-color: transparent;
+    &---fixed {
+        background-color: #1f2229;
+    }
+}
+
+ .navigation__content-wrap {
+    display: flex;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.navigation__content-wrap::after {
+    display: none;
+}
+
+.navigation__logo {
+    display: flex;
+    height: 100%;
+    position: relative;
+    color: #fff;
+    font-size: 1.5rem;
+    align-items: center;
+    height: 4rem;
+}
+
+.navigation__logo:hover {
+    color: #ff6858;
+}
+
+.navigation--fixed .navigation__logo {
+    height: 3rem;
+}
+
+.navigation__items-wrap {
+    display: flex;
+    list-style: none;
+}
+
+.navigation__item {}
+
+.navigation__lnk {
+    display: flex;
+    height: 4rem;
+    padding: 0 1rem;
+    color: rgba(255, 255, 255, .8);
+    align-items: center;
+}
+
+.navigation__lnk.mPS2id-highlight,
+.navigation__lnk:hover {
+    color: #ff6858;
+}
+
+.navigation--fixed .navigation__lnk {
+    height: 3rem;
+    /* font-size: 12px; */
+    /* padding: 0 .25rem; */
+}
+
+@media screen and (max-width: 1120px) {
+    .navigation {}
+    .navigation--fixed {}
+    .navigation__content-wrap {}
+    .navigation__content-wrap::after {}
+    .navigation__logo {
+        /* width: 160px; */
+        font-size: 14px;
+    }
+    .navigation__items-wrap {}
+    .navigation__item {}
+    .navigation__lnk {
+        padding: 0 .5rem;
+    }
+    .navigation__lnk.mPS2id-highlight,
+    .navigation__lnk:hover {}
+    .navigation--fixed .navigation__lnk {}
+}
+
+@media screen and (max-width: 640px) {
+    .navigation {
+        padding: 0;
+        background-color: #1f2229;
+    }
+    .navigation--fixed {
+        padding: 0;
+    }
+    .navigation__content-wrap {}
+    .navigation__content-wrap::after {}
+    .navigation__logo {
+        display: none;
+    }
+    .navigation__items-wrap {
+        width: 100%;
+    }
+    .navigation__item {
+        flex-grow: 1;
+    }
+    .navigation__lnk {
+        padding: 0 .5rem;
+        text-align: center;
+        font-size: 11px;
+        align-items: center;
+        justify-content: center;
+    }
+    .navigation__lnk.mPS2id-highlight,
+    .navigation__lnk:hover {}
+    .navigation--fixed .navigation__lnk {}
+}

@@ -1,0 +1,124 @@
+.about-us {
+    position: relative;
+    width: 100%;
+    padding: 4rem 1rem 4rem;
+    background-color: #fff;
+}
+
+.about-us__content-wrap {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.about-us__tile {
+    margin-bottom: 4rem;
+    text-align: center;
+    color: #33373e;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.about-us__subtitle {
+    margin-bottom: 4rem;
+    text-align: center;
+    color: #494c52;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.about-us__items-wrap {
+    display: flex;
+    clear: both;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.about-us__items-wrap::after {
+    display: none;
+}
+
+.about-us__item {
+    width: calc((100% - 2rem)/3);
+}
+
+.about-us__item-img {
+    width: 80px;
+    height: 80px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+
+.about-us__item-img--1 {
+    background-image: url(img/colours.svg);
+}
+
+.about-us__item-img--2 {
+    background-image: url(img/round-brush.svg);
+}
+
+.about-us__item-img--3 {
+    background-image: url(img/tools.svg);
+}
+
+.about-us__item-title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.about-us__item-desc {
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 1120px) {
+    .about-us {}
+    .about-us__content-wrap {}
+    .about-us__tile {}
+    .about-us__subtitle {}
+    .about-us__items-wrap {}
+    .about-us__items-wrap::after {}
+    .about-us__item {}
+    .about-us__item-img {}
+    .about-us__item-img--1 {}
+    .about-us__item-img--2 {}
+    .about-us__item-img--3 {}
+    .about-us__item-title {}
+    .about-us__item-desc {}
+}
+
+@media screen and (max-width: 640px) {
+    .about-us {}
+    .about-us__content-wrap {}
+    .about-us__tile {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+    .about-us__subtitle {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+    }
+    .about-us__items-wrap {}
+    .about-us__items-wrap::after {}
+    .about-us__item {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .about-us__item-img {}
+    .about-us__item-img--1 {}
+    .about-us__item-img--2 {}
+    .about-us__item-img--3 {}
+    .about-us__item-title {}
+    .about-us__item-desc {}
+}
