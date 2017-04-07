@@ -17,7 +17,7 @@
                 :style = "'background-image: url(' + item.icon + ');'"
             >
                 <p class="contacts__item-title">[[ item.title ]]</p>
-                <figcaption class="contacts__caption" v-html="65"></figcaption>
+                <figcaption class="contacts__caption" v-html="item.text"></figcaption>
             </figure>
 
         </div>

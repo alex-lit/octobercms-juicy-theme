@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -76,52 +76,40 @@ module.exports = "<article class=about-us id=about-us> <div class=about-us__cont
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = "<address class=contacts id=contacts :style=\"'background-color: ' + backgroundColor + ';'\"> <div class=contacts__content-wrap> <header class=contacts__title>[[ title ]]</header> <p class=contacts__subtitle>[[ subtitle ]]</p> <div class=contacts__items-wrap :style=\"'background-color: ' + contentBackgroundColor + ';'\"> <figure v-for=\"item in items\" class=contacts__item :style=\"'background-image: url(' + item.icon + ');'\"> <p class=contacts__item-title>[[ item.title ]]</p> <figcaption class=contacts__caption v-html=65></figcaption> </figure> </div> </div> </address>";
+module.exports = "<address class=contacts id=contacts :style=\"'background-color: ' + backgroundColor + ';'\"> <div class=contacts__content-wrap> <header class=contacts__title>[[ title ]]</header> <p class=contacts__subtitle>[[ subtitle ]]</p> <div class=contacts__items-wrap :style=\"'background-color: ' + contentBackgroundColor + ';'\"> <figure v-for=\"item in items\" class=contacts__item :style=\"'background-image: url(' + item.icon + ');'\"> <p class=contacts__item-title>[[ item.title ]]</p> <figcaption class=contacts__caption v-html=item.text></figcaption> </figure> </div> </div> </address>";
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = "<!---->";
+module.exports = "<nav class=navigation id=navigation data-scroll-offset> <div class=navigation__content-wrap> <a href=tel:+79788463955 class=navigation__logo>+7 (978) 846-39-55 Сергей</a> <ul class=navigation__items-wrap> <li class=navigation__item> <a href=#portfolio class=navigation__lnk data-ripple>Последние работы</a> </li> <li class=navigation__item> <a href=#about-us class=navigation__lnk data-ripple>О покрытии</a> </li> <li class=navigation__item> <a href=#reviews class=navigation__lnk data-ripple>Отзывы</a> </li> <li class=navigation__item> <a href=#contacts class=navigation__lnk data-ripple>Контакты</a> </li> </ul> </div> </nav>";
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = "<!---->";
+module.exports = "<section class=portfolio id=portfolio> <div class=portfolio__content-wrap> <header class=portfolio__tile>[[ title ]]</header> <div class=portfolio__subtitle v-html=description></div> </div> <div class=portfolio__items-wrap :style=\"'background-color: '+ color + ';'\"> <figure v-for=\"image in images\" class=portfolio__item :style=\"'background-image: url(' + image + ');'\" :href=image data-rel=lightcase:portfolio data-portfolio-item data-ripple></figure> </div> </section>";
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=navigation id=navigation data-scroll-offset> <div class=navigation__content-wrap> <a href=tel:+79788463955 class=navigation__logo>+7 (978) 846-39-55 Сергей</a> <ul class=navigation__items-wrap> <li class=navigation__item> <a href=#portfolio class=navigation__lnk data-ripple>Последние работы</a> </li> <li class=navigation__item> <a href=#about-us class=navigation__lnk data-ripple>О покрытии</a> </li> <li class=navigation__item> <a href=#reviews class=navigation__lnk data-ripple>Отзывы</a> </li> <li class=navigation__item> <a href=#contacts class=navigation__lnk data-ripple>Контакты</a> </li> </ul> </div> </nav>";
+module.exports = "<section class=promo id=promo> <header class=promo__title> <h1 class=promo__title-accent>[[ title ]]</h1> <span class=promo__title-desc>[[ subtitle ]]</span> <button class=promo__btn type=button href=#portfolio data-ripple>[[ buttonText ]]</button> </header> <div class=\"promo__slideshow / swiper-container\" data-slideshow> <div class=\"promo__slideshow-items-wrap / swiper-wrapper\"> <figure v-for=\"item in images\" class=\"promo__slideshow-item / swiper-slide\" :style=\"'background-image: url(' + item + ');'\"></figure> </div> </div> </section>";
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=portfolio id=portfolio> <div class=portfolio__content-wrap> <header class=portfolio__tile>[[ title ]]</header> <div class=portfolio__subtitle v-html=description></div> </div> <div class=portfolio__items-wrap :style=\"'background-color: '+ color + ';'\"> <figure v-for=\"image in images\" class=portfolio__item :style=\"'background-image: url(' + image + ');'\" :href=image data-rel=lightcase:portfolio data-portfolio-item data-ripple></figure> </div> </section>";
+module.exports = "<section class=reviews id=reviews :style=\"'background-color: ' + color + ';'\"> <div class=reviews__content-wrap> <header class=reviews__title>[[ title ]]</header> <div class=\"reviews__slideshow / swiper-container\" data-slideshow> <div class=\"reviews__slideshow-items-wrap / swiper-wrapper\"> <figure v-for=\"item in items\" class=\"reviews__slideshow-item / swiper-slide\"> <div class=reviews__slideshow-item-img :style=\"'background-image: url(' + item.avatar + '); box-shadow: inset 0 0 0 3px ' + color + ', 0 0 0 10px rgba(255, 255, 255, 0.6);'\"></div> <strong class=reviews__slideshow-item-name>[[ item.name ]]</strong> <span class=reviews__slideshow-item-desc>[[ item.info ]]</span> <figcaption class=reviews__slideshow-item-caption v-html=item.text></figcaption> </figure> </div> <div class=\"reviews__slideshow-pagination / swiper-pagination\" data-pagination></div> </div> </div> </section>";
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=promo id=promo> <header class=promo__title> <h1 class=promo__title-accent>[[ title ]]</h1> <span class=promo__title-desc>[[ subtitle ]]</span> <button class=promo__btn type=button href=#portfolio data-ripple>[[ buttonText ]]</button> </header> <div class=\"promo__slideshow / swiper-container\" data-slideshow> <div class=\"promo__slideshow-items-wrap / swiper-wrapper\"> <figure v-for=\"item in images\" class=\"promo__slideshow-item / swiper-slide\" :style=\"'background-image: url(' + item + ');'\"></figure> </div> </div> </section>";
+module.exports = "<footer class=site-footer id=site-footer> <div class=site-footer__content-wrap> <p class=site-footer__copy> &copy; [[ year ]] [[ company ]] </p> <p class=site-footer__dev>Сайт разработан с <span class=\"site-footer__dev-icon / [ animated bounceIn infinite ]\"></span> силами <a href=https://web2easy.ru class=site-footer__dev-lnk title=\"Профессиональная разработка сайтов в Севастополе\" target=_blank data-tooltip-title=\"Нужен сайт?\" data-tooltip-text=\"Разработка севременных сайтов в Севастополе\"> web2easy.ru</a> </p> </div> </footer>";
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports) {
-
-module.exports = "<section class=reviews id=reviews :style=\"'background-color: ' + color + ';'\"> <div class=reviews__content-wrap> <header class=reviews__title>[[ title ]]</header> <div class=\"reviews__slideshow / swiper-container\" data-slideshow> <div class=\"reviews__slideshow-items-wrap / swiper-wrapper\"> <figure v-for=\"item in items\" class=\"reviews__slideshow-item / swiper-slide\"> <div class=reviews__slideshow-item-img :style=\"'background-image: url(' + item.avatar + '); box-shadow: inset 0 0 0 3px ' + color + ', 0 0 0 10px rgba(255, 255, 255, 0.6);'\"></div> <strong class=reviews__slideshow-item-name>[[ item.name ]]</strong> <span class=reviews__slideshow-item-desc>[[ item.info ]]</span> <figcaption class=reviews__slideshow-item-caption v-html=item.text></figcaption> </figure> </div> <div class=\"reviews__slideshow-pagination / swiper-pagination\" data-pagination></div> </div> </div> </section>";
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-module.exports = "<!---->";
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 jQuery(document).ready(function ($) {
@@ -295,14 +283,10 @@ jQuery(document).ready(function ($) {
     // comment_text (VENDOR: vendor_name)
 
 });
-Vue.component('form-footer', {
-    delimiters: ['[[', ']]'],
-    template: __webpack_require__(2),
-    props: []
-});
+
 Vue.component('navigation', {
     delimiters: ['[[', ']]'],
-    template: __webpack_require__(4),
+    template: __webpack_require__(2),
     methods: {
         fixMenu: function fixMenu() {
             if ($(document).scrollTop() != 0) {
@@ -324,12 +308,12 @@ Vue.component('navigation', {
 });
 Vue.component('portfolio', {
     delimiters: ['[[', ']]'],
-    template: __webpack_require__(5),
+    template: __webpack_require__(3),
     props: ['title', 'description', 'images', 'color']
 });
 Vue.component('promo', {
     delimiters: ['[[', ']]'],
-    template: __webpack_require__(6),
+    template: __webpack_require__(4),
     props: ['title', 'subtitle', 'buttonText', 'images'],
     mounted: function mounted() {
         var promoSlideshow = new Swiper('.promo [data-slideshow]', {
@@ -346,7 +330,7 @@ Vue.component('promo', {
 });
 Vue.component('reviews', {
     delimiters: ['[[', ']]'],
-    template: __webpack_require__(7),
+    template: __webpack_require__(5),
     props: ['title', 'items', 'color'],
     mounted: function mounted() {
         var vm = this;
@@ -364,11 +348,14 @@ Vue.component('reviews', {
 });
 Vue.component('site-footer', {
     delimiters: ['[[', ']]'],
-    template: __webpack_require__(8)
-});
-Vue.component('map-widget', {
-    delimiters: ['[[', ']]'],
-    template: __webpack_require__(3)
+    template: __webpack_require__(6),
+    props: ['company'],
+    computed: {
+        year: function year() {
+            currentYear = new Date().getFullYear();
+            return currentYear;
+        }
+    }
 });
 var App = new Vue({
     delimiters: ['[[', ']]'],

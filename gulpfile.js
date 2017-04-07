@@ -654,7 +654,8 @@ gulp.task('root', function () {
 gulp.task('watch', function () {
     livereload.listen();
     gulp.watch(project.appCSS(), ['css--app']);
-    gulp.watch(['src/**/*.htm','src/**/*.tpl'], ['htm','js--webpack']);
+    gulp.watch(['src/**/*.htm'], ['htm']);
+    gulp.watch(['src/**/*.tpl'], ['js--webpack']);
     gulp.watch(project.appJS(), ['js--webpack']);
     gulp.watch(project.images(), ['images']);
     gulp.watch(project.video(), ['video']);

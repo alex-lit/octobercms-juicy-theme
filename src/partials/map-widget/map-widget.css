@@ -1,1 +1,13 @@
-/**/
+.map-widget {
+    width: 100%;
+    position: relative;
+    height: 32rem;
+    background-color: #fff;
+    @media screen and (--mobile) {
+        height: 100vmin;
+    }
+    & iframe {
+        width: 100%;
+        height: 100%;
+    }
+}

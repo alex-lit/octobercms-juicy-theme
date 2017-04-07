@@ -7,77 +7,91 @@ meta_title       = "BABY WATCH"
 meta_description = "Крутяцкие часы для детей"
 ==
 
-<navigation></navigation>
+{% if this.theme.navigation_enable %}
+    <navigation></navigation>
+{% endif %}
 
-<promo
-    title       = "{{ this.theme.promo_title }}"
-    subtitle    = "{{ this.theme.promo_subtitle }}"
-    button-text = "{{ this.theme.promo_button_text }}"
-    :images     = "[
-        {% for item in this.theme.promo_item %}
-            '{{ item.promo_image | media}}',
-        {% endfor %}
-    ]"
-></promo>
+{% if this.theme.promo_enable %}
+    <promo
+        title       = "{{ this.theme.promo_title }}"
+        subtitle    = "{{ this.theme.promo_subtitle }}"
+        button-text = "{{ this.theme.promo_button_text }}"
+        :images     = "[
+            {% for item in this.theme.promo_item %}
+                '{{ item.promo_image | media}}',
+            {% endfor %}
+        ]"
+    ></promo>
+{% endif %}
 
-<portfolio
-    title       = "{{ this.theme.portfolio_title }}"
-    description = "{{ this.theme.portfolio_description }}"
-    color       = "{{ this.theme.portfolio_color}}"
-    :images     = "[
-        {% for item in this.theme.portfolio_item %}
-            '{{ item.portfolio_image | media}}',
-        {% endfor %}
-    ]"
-></portfolio>
+{% if this.theme.portfolio_enable %}
+    <portfolio
+        title       = "{{ this.theme.portfolio_title }}"
+        description = "{{ this.theme.portfolio_description }}"
+        color       = "{{ this.theme.portfolio_color}}"
+        :images     = "[
+            {% for item in this.theme.portfolio_item %}
+                '{{ item.image | media}}',
+            {% endfor %}
+        ]"
+    ></portfolio>
+{% endif %}
 
-<about-us
-    title       = "{{ this.theme.about_us_title }}"
-    description = "{{ this.theme.about_us_description }}"
-    :items      = "[
-        {% for item in this.theme.about_us_item %}
-            {
-                icon:  '{{ item.item_icon | media}}',
-                title: '{{ item.item_title }}',
-                text:  `{{ item.item_text | raw }}`
-            },
-        {% endfor %}
-    ]"
-></about-us>
+{% if this.theme.about_us_enable %}
+    <about-us
+        title       = "{{ this.theme.about_us_title }}"
+        description = "{{ this.theme.about_us_description }}"
+        :items      = "[
+            {% for item in this.theme.about_us_item %}
+                {
+                    icon:  '{{ item.item_icon | media}}',
+                    title: '{{ item.item_title }}',
+                    text:  `{{ item.item_text | raw }}`
+                },
+            {% endfor %}
+        ]"
+    ></about-us>
+{% endif %}
 
-<reviews
-    title  = "{{ this.theme.reviews_title }}"
-    color  = "{{ this.theme.reviews_color}}"
-    :items = "[
-        {% for item in this.theme.reviews_item %}
-            {
-                avatar: '{{ item.avatar | media}}',
-                name:   '{{ item.name }}',
-                info:   '{{ item.info }}',
-                text:   `{{ item.text | raw }}`
-            },
-        {% endfor %}
-    ]"
-></reviews>
+{% if this.theme.reviews_enable %}
+    <reviews
+        title  = "{{ this.theme.reviews_title }}"
+        color  = "{{ this.theme.reviews_color}}"
+        :items = "[
+            {% for item in this.theme.reviews_item %}
+                {
+                    avatar: '{{ item.avatar | media}}',
+                    name:   '{{ item.name }}',
+                    info:   '{{ item.info }}',
+                    text:   `{{ item.text | raw }}`
+                },
+            {% endfor %}
+        ]"
+    ></reviews>
+{% endif %}
 
-<contacts
-    title                    = "{{ this.theme.contacts_title }}"
-    subtitle                 = "{{ this.theme.contacts_subtitle}}"
-    background-color         = "{{ this.theme.contacts_background_color }}"
-    content-background-color = "{{ this.theme.contacts_content_background_color }}"
-    :items = "[
-        {% for item in this.theme.contacts_item %}
-            {
-                icon:  '{{ item.icon | media }}',
-                title: '{{ item.title }}',
-                text:  `{{ item.text | raw }}`
-            },
-        {% endfor %}
-    ]"
-></contacts>
+{% if this.theme.contacts_enable %}
+    <contacts
+        title                    = "{{ this.theme.contacts_title }}"
+        subtitle                 = "{{ this.theme.contacts_subtitle}}"
+        background-color         = "{{ this.theme.contacts_background_color }}"
+        content-background-color = "{{ this.theme.contacts_content_background_color }}"
+        :items = "[
+            {% for item in this.theme.contacts_item %}
+                {
+                    icon:  '{{ item.icon | media }}',
+                    title: '{{ item.title }}',
+                    text:  `{{ item.text }}`
+                },
+            {% endfor %}
+        ]"
+    ></contacts>
+{% endif %}
 
-<map-widget></map-widget>
+{% if this.theme.map_widget_enable %}
+    {% partial 'map-widget/map-widget' %}
+{% endif %}
 
-<form-footer></form-footer>
-
-<site-footer></site-footer>
+{% if this.theme.site_footer_enable %}
+    <site-footer></site-footer>
+{% endif %}

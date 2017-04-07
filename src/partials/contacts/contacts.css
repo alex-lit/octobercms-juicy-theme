@@ -8,6 +8,7 @@
     background-color: #33373e;
     & a {
         color: #fff;
+        text-decoration: underline;
         &:hover {
             color: #33373e;
         }

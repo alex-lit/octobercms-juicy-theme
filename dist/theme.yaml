@@ -17,60 +17,87 @@ form:
         # Site
 
         site_config_desc:
-            label:   OctoberCMS Juicy Theme Options
-            type:    section
+            label: OctoberCMS Juicy Theme Options
+            type: section
             comment: Clean, simple and responsive landing page.
 
     tabs:
         fields:
 
-           #Promo
+            #Navigation
+
+            navigation_enable:
+                label: Display this component?
+                type: switch
+                default: 1
+                tab: Navigation
+
+            navigation_logo:
+                label: Logo
+                type: mediafinder
+                mode: image
+                comment:
+                tab: Navigation
+
+            #Promo
+
+            promo_enable:
+                label: Display this component?
+                type: switch
+                default: 1
+                tab: Promo
 
             promo_title:
-                label:   Title
-                type:    text
+                label: Title
+                type: text
                 comment:
                 default: 'OctoberCMS Juicy Theme'
                 tab: Promo
 
             promo_subtitle:
-                label:   Subtitle
-                type:    text
+                label: Subtitle
+                type: text
                 comment:
                 default: 'Clean, simple and responsive landing page'
                 tab: Promo
 
             promo_button_text:
-                label:   Button text
-                type:    text
+                label: Button text
+                type: text
                 comment:
                 default: 'Read more!'
                 tab: Promo
 
             promo_item:
-                type:   repeater
+                type: repeater
                 prompt: Add image
                 form:
                     fields:
                         promo_image:
                             label: Image
-                            type:  mediafinder
-                            mode:  image
+                            type: mediafinder
+                            mode: image
                 tab: Promo
 
 
-          #Portfolio
+            #Portfolio
+
+            portfolio_enable:
+                label: Display this component?
+                type: switch
+                default: 1
+                tab: Portfolio
 
             portfolio_title:
-                label:   Title
-                type:    text
+                label: Title
+                type: text
                 comment:
                 default: 'Portfolio'
                 tab: Portfolio
 
             portfolio_description:
-                label:   Desciption
-                type:    richeditor
+                label: Desciption
+                type: richeditor
                 comment:
                 default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, non expedita perspiciatis ex nostrum soluta neque natus veniam dignissimos consequuntur illo sed mollitia laboriosam, aspernatur eum. Alias dolorem, soluta nostrum.'
                 tab: Portfolio
@@ -81,153 +108,218 @@ form:
               default: '#3498db'
               tab: Portfolio
 
+            portfolio_items_title:
+                label: Portfolio items
+                type: section
+                comment:
+                tab: Portfolio
+
             portfolio_item:
-                type:   repeater
+                type: repeater
                 prompt: Add image
                 form:
                     fields:
-                        portfolio_image:
+                        image:
                             label: Image
-                            type:  mediafinder
-                            mode:  image
+                            type: mediafinder
+                            mode: image
                 tab: Portfolio
 
 
-          # About Us
+            # About Us
+
+            about_us_enable:
+                label: Display this component?
+                type: switch
+                default: 1
+                tab: About us
 
             about_us_title:
-                label:   Title
-                type:    text
+                label: Title
+                type: text
                 comment:
                 default: 'Title'
                 tab: About us
 
             about_us_description:
-                label:   Description
-                type:    richeditor
+                label: Description
+                type: richeditor
                 comment:
                 default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, non expedita perspiciatis ex nostrum soluta neque natus veniam dignissimos consequuntur illo sed mollitia laboriosam, aspernatur eum. Alias dolorem, soluta nostrum.'
                 tab: About us
 
             about_us_item:
-                type:   repeater
+                type: repeater
                 prompt: Add item
                 form:
                     fields:
                         item_icon:
                             label: Icon
-                            type:  mediafinder
-                            mode:  image
+                            type: mediafinder
+                            mode: image
                         item_title:
-                            label:   Title
-                            type:    text
+                            label: Title
+                            type: text
                             comment:
                             default: 'Title'
                         item_text:
-                            label:   Text
-                            type:    richeditor
+                            label: Text
+                            type: richeditor
                             comment:
                             default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
                 tab: About us
 
-          #Reviews
+            #Reviews
+
+            reviews_enable:
+                label: Display this component?
+                type: switch
+                default: 1
+                tab: Reviews
 
             reviews_title:
-                label:   Title
-                type:    text
+                label: Title
+                type: text
                 comment:
                 default: Reviews title
-                tab:     Reviews
+                tab: Reviews
 
             reviews_color:
-              label: Background color
-              type: colorpicker
-              default: 'red'
-              tab: Reviews
+                label: Background color
+                type: colorpicker
+                default: rgb(155, 89, 182)
+                tab: Reviews
+
+            reviews_items_title:
+                label: Reviews items
+                type: section
+                comment:
+                tab: Reviews
 
             reviews_item:
-                type:   repeater
+                type: repeater
                 prompt: Add review
                 form:
                     fields:
-                        text:
-                            label:   Text
-                            type:    richeditor
-                            default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-                            span:    right
                         avatar:
-                            label:   Avatar
-                            type:    mediafinder
-                            mode:    image
-                            span:    left
+                            label: Avatar
+                            type: mediafinder
+                            mode: image
+                            span: left
                         name:
-                            label:   Name
-                            type:    text
+                            label: Name
+                            type: text
                             default: 'John Doe'
-                            span:    left
+                            span: right
                         info:
-                            label:   Info
-                            type:    text
+                            label: Info
+                            type: text
                             default: 'Best client'
-                            span:    left
+                            span: right
+                        text:
+                            label: Text
+                            type: richeditor
+                            default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+                            span: right
                 tab: Reviews
 
-          #Contacts
+            #Contacts
+
+            contacts_enable:
+                label: Display this component?
+                type: switch
+                default: 1
+                tab: Contacts
 
             contacts_title:
-                label:   Title
-                type:    text
+                label: Title
+                type: text
                 comment:
                 default: 'Contacts title'
                 span: left
-                tab:     Contacts
+                tab: Contacts
 
             contacts_subtitle:
-                label:   Subtitle
-                type:    text
+                label: Subtitle
+                type: text
                 comment:
                 default: 'Contacts subtitle'
-                span: left
-                tab:     Contacts
+                span: right
+                tab: Contacts
 
             contacts_background_color:
                 label: Background color
                 type: colorpicker
-                default: 'red'
+                default: rgb(43, 62, 80)
                 span: left
                 tab: Contacts
 
             contacts_content_background_color:
                 label: Content background color
                 type: colorpicker
-                default: 'red'
-                span: left
+                default: rgb(52, 152, 219)
+                span: right
+                tab: Contacts
+
+            contacts_items_title:
+                label: Contacts items
+                type: section
+                comment:
                 tab: Contacts
 
             contacts_item:
-                type:   repeater
+                type: repeater
                 prompt: Add item
                 form:
                     fields:
                         icon:
-                            label:   Icon
-                            type:    mediafinder
-                            mode:    image
+                            label: Icon
+                            type: mediafinder
+                            mode: image
                         title:
-                            label:   Title
-                            type:    text
+                            label: Title
+                            type: text
                             default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
                         text:
-                            label:   Text
-                            type:    codeeditor
-                            mode: html
+                            label: Text
+                            type:  richeditor
                 tab: Contacts
+
+            #Map-widget
+
+            map_widget_enable:
+                label: Display this component?
+                type: switch
+                default: 1
+                tab: Map widget
+
+            map_widget_code:
+                label: Map widget code
+                type: codeeditor
+                mode: html
+                comment:
+                default: <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6838.06201374136!2d-80.05410220906819!3d26.70512005781486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1491568088490" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                tab: Map widget
+
+            #Site-footer
+
+            site_footer_enable:
+                label: Display this component?
+                type: switch
+                default: 1
+                tab: Site footer
+
+            site_footer_company:
+                label: Company name
+                type: text
+                default: My Awesome Company
+                comment:
+                span: left
+                tab: Site footer
 
 #--------------------------------------------------------------------------
 # FAQ
 #--------------------------------------------------------------------------
-#
-# Ссылки на документацию
 #
 # Field options
 # https://octobercms.com/docs/backend/forms#form-field-options

@@ -169,11 +169,7 @@ jQuery(document).ready(function ($) {
     // comment_text (VENDOR: vendor_name)
 
 });
-Vue.component('form-footer', {
-    delimiters: ['[[', ']]'],
-    template: require('./form-footer/form-footer.tpl'),
-    props: []
-});
+
 Vue.component('navigation', {
     delimiters: ['[[', ']]'],
     template: require('./navigation/navigation.tpl'),
@@ -238,11 +234,14 @@ Vue.component('reviews', {
 });
 Vue.component('site-footer', {
     delimiters: ['[[', ']]'],
-    template: require('./site-footer/site-footer.tpl')
-});
-Vue.component('map-widget', {
-    delimiters: ['[[', ']]'],
-    template: require('./map-widget/map-widget.tpl')
+    template: require('./site-footer/site-footer.tpl'),
+    props: ['company'],
+    computed: {
+        year: function year() {
+            currentYear = new Date().getFullYear();
+            return currentYear;
+        }
+    }
 });
 var App = new Vue({
     delimiters: ['[[', ']]'],
