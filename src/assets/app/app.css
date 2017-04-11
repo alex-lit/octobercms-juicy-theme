@@ -9,10 +9,10 @@
 
 :root {
     --colorPlaceholder: #a8a8a8;
-    --colorPrimary: #ff4b7b;
+    --colorPrimary: #34495e;
     --colorTextSelection: #f9f9f9;
-    --colorText: #000;
-    --colorOverlay: #6e6e6e;
+    --colorText: #34495e;
+    --colorOverlay: #34495e;
     --fontFamily: OpenSansRegular, Arial, sans-serif;
     --shadowOutset: 0 5px 30px rgba(35, 31, 32, 0.15);
     --transformScale: scale(1.1);
@@ -30,9 +30,8 @@
 */
 
 :root {
-    @custom-media --laptop (max-width: 1650px);
-    @custom-media --tablet (max-width: 1170px);
-    @custom-media --mobile (max-width: 750px);
+    @custom-media --tablet (max-width: 1120px);
+    @custom-media --mobile (max-width: 640px);
 }
 
 
@@ -152,7 +151,7 @@ html {
     min-width: 320px;
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to right, #ff4b7b 0%, #ffd133 100%);
+    background-color: var(--colorText);
     color: var(--colorText);
 }
 

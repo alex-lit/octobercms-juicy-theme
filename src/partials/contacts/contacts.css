@@ -1,11 +1,11 @@
 .contacts {
     position: relative;
     z-index: 2;
-    width: 100%;
     padding: 4rem 1rem 4rem;
-    text-align: center;
-    color: #fff;
+    width: 100%;
     background-color: #33373e;
+    color: #fff;
+    text-align: center;
     & a {
         color: #fff;
         text-decoration: underline;
@@ -16,99 +16,68 @@
 }
 
 .contacts__content-wrap {
-    width: 100%;
-    max-width: 1120px;
     margin: 0 auto;
+    max-width: 1120px;
+    width: 100%;
 }
 
 .contacts__title {
     margin-bottom: 4rem;
     text-align: center;
-    font-size: 50px;
     font-weight: 300;
+    font-size: 50px;
+    @media screen and (--mobile) {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
 }
 
 .contacts__subtitle {
     margin-bottom: 4rem;
     text-align: center;
-    font-size: 20px;
     font-weight: 300;
+    font-size: 20px;
     line-height: 1.5;
 }
 
 .contacts__items-wrap {
     display: flex;
-    width: 100%;
-    margin-bottom: -8rem;
-    padding: 2rem 0;
-    border-radius: 5px;
-    background-color: #ff6858;
     flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem 0;
+    width: 100%;
+    border-radius: 5px;
+    @media screen and (--mobile) {
+        padding: 0;
+    }
 }
 
 .contacts__item {
-    width: calc(100% / 3);
+    flex-grow: 1;
+    margin-bottom: 2rem;
     padding: 8rem 2rem 2rem;
-    background-repeat: no-repeat;
+    width: calc(100% / 3);
     background-position: center 2rem;
     background-size: 3rem auto;
+    background-repeat: no-repeat;
+    @media screen and (--tablet) {
+        padding: 8rem 1rem 1rem;
+    }
+    @media screen and (--mobile) {
+        margin-bottom: 2rem;
+        width: 100%;
+    }
 }
 
 .contacts__item-title {
     margin-bottom: 2rem;
     font-size: 2rem;
+    @media screen and (--tablet) {
+        font-size: 2rem;
+    }
 }
 
 .contacts__caption {
     font-size: 1rem;
     line-height: 1.5;
-}
-
-@media screen and (max-width: 1120px) {
-    .contacts {}
-    .contacts__content-wrap {}
-    .contacts__title {}
-    .contacts__subtitle {}
-    .contacts__items-wrap {}
-    .contacts__item {
-        padding: 8rem 1rem 1rem;
-    }
-    .contacts__item--addr {
-        /* padding: 1rem; */
-    }
-    .contacts__item--phone {}
-    .contacts__item--mail {}
-    .contacts__item-title {
-        font-size: 2rem;
-    }
-    .contacts__caption {}
-    .contacts__lnk {}
-    .contacts__lnk:hover {}
-}
-
-@media screen and (max-width: 640px) {
-    .contacts {}
-    .contacts__content-wrap {}
-    .contacts__title {
-        margin-bottom: 2rem;
-        font-size: 2rem;
-    }
-    .contacts__subtitle {
-        margin-bottom: 2rem;
-        font-size: 1rem;
-    }
-    .contacts__items-wrap {
-        padding: 0;
-    }
-    .contacts__item {
-        width: 100%;
-        margin-bottom: 2rem;
-    }
-    .contacts__item--addr {}
-    .contacts__item--phone {}
-    .contacts__item--mail {}
-    .contacts__item-title {}
-    .contacts__caption {}
-    .contacts__lnk {}
-    .contacts__lnk:hover {}
 }

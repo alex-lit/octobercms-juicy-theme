@@ -82,7 +82,7 @@ module.exports = "<address class=contacts id=contacts :style=\"'background-color
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=navigation id=navigation data-scroll-offset> <div class=navigation__content-wrap> <a href=tel:+79788463955 class=navigation__logo>+7 (978) 846-39-55 Сергей</a> <ul class=navigation__items-wrap> <li class=navigation__item> <a href=#portfolio class=navigation__lnk data-ripple>Последние работы</a> </li> <li class=navigation__item> <a href=#about-us class=navigation__lnk data-ripple>О покрытии</a> </li> <li class=navigation__item> <a href=#reviews class=navigation__lnk data-ripple>Отзывы</a> </li> <li class=navigation__item> <a href=#contacts class=navigation__lnk data-ripple>Контакты</a> </li> </ul> </div> </nav>";
+module.exports = "<nav class=navigation id=navigation data-scroll-offset> <div class=navigation__content-wrap> <a href=/ class=navigation__logo :style=\"'background-image: url(' + logo + ');'\"></a> <ul class=navigation__items-wrap> <li class=navigation__item v-for=\"item in enabledComponents\"> <a :href=item.link class=navigation__lnk data-ripple>[[ item.title ]]</a> </li> </ul> </div> </nav>";
 
 /***/ }),
 /* 3 */
@@ -106,7 +106,7 @@ module.exports = "<section class=reviews id=reviews :style=\"'background-color: 
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=site-footer id=site-footer> <div class=site-footer__content-wrap> <p class=site-footer__copy> &copy; [[ year ]] [[ company ]] </p> <p class=site-footer__dev>Сайт разработан с <span class=\"site-footer__dev-icon / [ animated bounceIn infinite ]\"></span> силами <a href=https://web2easy.ru class=site-footer__dev-lnk title=\"Профессиональная разработка сайтов в Севастополе\" target=_blank data-tooltip-title=\"Нужен сайт?\" data-tooltip-text=\"Разработка севременных сайтов в Севастополе\"> web2easy.ru</a> </p> </div> </footer>";
+module.exports = "<footer class=site-footer id=site-footer :style=\"'background-color: ' + backgroundColor + ';'\"> <div class=site-footer__content-wrap> <span class=site-footer__company>&copy; [[ year ]] [[ company ]]</span> </div> </footer>";
 
 /***/ }),
 /* 7 */
@@ -287,12 +287,13 @@ jQuery(document).ready(function ($) {
 Vue.component('navigation', {
     delimiters: ['[[', ']]'],
     template: __webpack_require__(2),
+    props: ['logo', 'enabledComponents'],
     methods: {
         fixMenu: function fixMenu() {
             if ($(document).scrollTop() != 0) {
-                $('#menu').addClass('menu--fixed');
+                $('#navigation').addClass('navigation--fixed');
             } else {
-                $('#menu').removeClass('menu--fixed');
+                $('#navigation').removeClass('navigation--fixed');
             }
         }
     },
@@ -349,7 +350,7 @@ Vue.component('reviews', {
 Vue.component('site-footer', {
     delimiters: ['[[', ']]'],
     template: __webpack_require__(6),
-    props: ['company'],
+    props: ['company', 'backgroundColor'],
     computed: {
         year: function year() {
             currentYear = new Date().getFullYear();
@@ -401,7 +402,7 @@ var App = new Vue({
         }),
         mPageScroll2id: function mPageScroll2id() {
             $("a[href*='#'], button[href*='#']").mPageScroll2id({
-                offset: 40,
+                offset: 46,
                 scrollSpeed: 1000,
                 scrollEasing: 'easeInOutCubic'
             });

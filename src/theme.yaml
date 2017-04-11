@@ -1,8 +1,8 @@
-name:        'Juicy'
-description: 'OctoberCMS Juicy Theme'
-author:      'Alexey Litovchenko'
-homepage:    'https://web2easy.ru'
-code:        ''
+name:        Juicy
+description: OctoberCMS Juicy Theme
+author:      Alexey Litovchenko
+homepage:    https://web2easy.ru
+code:        Juicy
 #require:
 #    - Acme.User
 #    - Acme.Blog
@@ -37,6 +37,7 @@ form:
                 type: mediafinder
                 mode: image
                 comment:
+                default: /components/navigation/navigation-1.png
                 tab: Navigation
 
             #Promo
@@ -66,6 +67,12 @@ form:
                 type: text
                 comment:
                 default: 'Read more!'
+                tab: Promo
+
+            promo_items_title:
+                label: Promo images
+                type: section
+                comment:
                 tab: Promo
 
             promo_item:
@@ -138,7 +145,7 @@ form:
                 label: Title
                 type: text
                 comment:
-                default: 'Title'
+                default: About us
                 tab: About us
 
             about_us_description:
@@ -181,7 +188,7 @@ form:
                 label: Title
                 type: text
                 comment:
-                default: Reviews title
+                default: Reviews
                 tab: Reviews
 
             reviews_color:
@@ -209,17 +216,14 @@ form:
                         name:
                             label: Name
                             type: text
-                            default: 'John Doe'
                             span: right
                         info:
                             label: Info
                             type: text
-                            default: 'Best client'
                             span: right
                         text:
                             label: Text
                             type: richeditor
-                            default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
                             span: right
                 tab: Reviews
 
@@ -235,30 +239,26 @@ form:
                 label: Title
                 type: text
                 comment:
-                default: 'Contacts title'
-                span: left
+                default: Contacts
                 tab: Contacts
 
             contacts_subtitle:
                 label: Subtitle
                 type: text
                 comment:
-                default: 'Contacts subtitle'
-                span: right
+                default: Nisi, non expedita perspiciatis ex nostrum soluta neque natus veniam dignissimos consequuntur illo sed mollitia laboriosam, aspernatur eum. Alias dolorem, soluta nostrum.
                 tab: Contacts
 
             contacts_background_color:
                 label: Background color
                 type: colorpicker
                 default: rgb(43, 62, 80)
-                span: left
                 tab: Contacts
 
             contacts_content_background_color:
                 label: Content background color
                 type: colorpicker
                 default: rgb(52, 152, 219)
-                span: right
                 tab: Contacts
 
             contacts_items_title:
@@ -314,7 +314,12 @@ form:
                 type: text
                 default: My Awesome Company
                 comment:
-                span: left
+                tab: Site footer
+
+            site_footer_background_color:
+                label: Background color
+                type: colorpicker
+                default: rgb(43, 62, 80)
                 tab: Site footer
 
 #--------------------------------------------------------------------------

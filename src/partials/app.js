@@ -173,12 +173,13 @@ jQuery(document).ready(function ($) {
 Vue.component('navigation', {
     delimiters: ['[[', ']]'],
     template: require('./navigation/navigation.tpl'),
+    props: ['logo', 'enabledComponents'],
     methods: {
         fixMenu: function fixMenu() {
             if ($(document).scrollTop() != 0) {
-                $('#menu').addClass('menu--fixed');
+                $('#navigation').addClass('navigation--fixed');
             } else {
-                $('#menu').removeClass('menu--fixed');
+                $('#navigation').removeClass('navigation--fixed');
             }
         }
     },
@@ -235,7 +236,7 @@ Vue.component('reviews', {
 Vue.component('site-footer', {
     delimiters: ['[[', ']]'],
     template: require('./site-footer/site-footer.tpl'),
-    props: ['company'],
+    props: ['company', 'backgroundColor'],
     computed: {
         year: function year() {
             currentYear = new Date().getFullYear();
@@ -287,7 +288,7 @@ var App = new Vue({
         }),
         mPageScroll2id: function mPageScroll2id() {
             $("a[href*='#'], button[href*='#']").mPageScroll2id({
-                offset: 40,
+                offset: 46,
                 scrollSpeed: 1000,
                 scrollEasing: 'easeInOutCubic'
             });

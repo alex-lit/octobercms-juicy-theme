@@ -1,16 +1,46 @@
-title            = "Домашняя страница"
+title            = "Main page"
 url              = "/"
 layout           = "main"
-description      = "Главная страница сайта"
+description      = "Main page template"
 is_hidden        = 0
-meta_title       = "BABY WATCH"
-meta_description = "Крутяцкие часы для детей"
+meta_title       = "OctoberCMS Juicy Theme"
+meta_description = "Clean, simple and responsive landing page"
 ==
 
+{# Navigation #}
 {% if this.theme.navigation_enable %}
-    <navigation></navigation>
+    <navigation
+        logo                = "{{ this.theme.navigation_logo | media }}"
+        :enabled-components = "[
+            {% if this.theme.portfolio_enable %}
+                {
+                    title: '{{ this.theme.portfolio_title }}',
+                    link:  '#portfolio'
+                },
+            {% endif %}
+            {% if this.theme.about_us_enable %}
+                {
+                    title: '{{ this.theme.about_us_title }}',
+                    link:  '#about-us'
+                },
+            {% endif %}
+            {% if this.theme.reviews_enable %}
+                {
+                    title: '{{ this.theme.reviews_title }}',
+                    link:  '#reviews'
+                },
+            {% endif %}
+            {% if this.theme.contacts_enable %}
+                {
+                    title: '{{ this.theme.contacts_title }}',
+                    link:  '#contacts'
+                },
+            {% endif %}
+        ]"
+    ></navigation>
 {% endif %}
 
+{# Promo #}
 {% if this.theme.promo_enable %}
     <promo
         title       = "{{ this.theme.promo_title }}"
@@ -24,6 +54,7 @@ meta_description = "Крутяцкие часы для детей"
     ></promo>
 {% endif %}
 
+{# Portfolio #}
 {% if this.theme.portfolio_enable %}
     <portfolio
         title       = "{{ this.theme.portfolio_title }}"
@@ -37,6 +68,7 @@ meta_description = "Крутяцкие часы для детей"
     ></portfolio>
 {% endif %}
 
+{# About us #}
 {% if this.theme.about_us_enable %}
     <about-us
         title       = "{{ this.theme.about_us_title }}"
@@ -53,6 +85,7 @@ meta_description = "Крутяцкие часы для детей"
     ></about-us>
 {% endif %}
 
+{# Reviews #}
 {% if this.theme.reviews_enable %}
     <reviews
         title  = "{{ this.theme.reviews_title }}"
@@ -70,6 +103,7 @@ meta_description = "Крутяцкие часы для детей"
     ></reviews>
 {% endif %}
 
+{# Contacts #}
 {% if this.theme.contacts_enable %}
     <contacts
         title                    = "{{ this.theme.contacts_title }}"
@@ -88,10 +122,15 @@ meta_description = "Крутяцкие часы для детей"
     ></contacts>
 {% endif %}
 
+{# Map widget #}
 {% if this.theme.map_widget_enable %}
     {% partial 'map-widget/map-widget' %}
 {% endif %}
 
+{# Site footer #}
 {% if this.theme.site_footer_enable %}
-    <site-footer></site-footer>
+    <site-footer
+        company          = "{{ this.theme.site_footer_company }}"
+        background-color = "{{ this.theme.site_footer_background_color }}"
+    ></site-footer>
 {% endif %}

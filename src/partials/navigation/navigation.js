@@ -1,12 +1,16 @@
 Vue.component('navigation', {
     delimiters: ['[[', ']]'],
     template: require('./navigation/navigation.tpl'),
+    props: [
+        'logo',
+        'enabledComponents'
+    ],
     methods: {
         fixMenu() {
             if ($(document).scrollTop() != 0) {
-                $('#menu').addClass('menu--fixed');
+                $('#navigation').addClass('navigation--fixed');
             } else {
-                $('#menu').removeClass('menu--fixed');
+                $('#navigation').removeClass('navigation--fixed');
             }
         }
     },

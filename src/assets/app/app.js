@@ -32,7 +32,7 @@ const App = new Vue({
         },
         mPageScroll2id() {
             $("a[href*='#'], button[href*='#']").mPageScroll2id({
-                offset: 40,
+                offset: 46,
                 scrollSpeed: 1000,
                 scrollEasing: 'easeInOutCubic'
             });
