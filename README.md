@@ -1,4 +1,4 @@
-#Introduction
+# Introduction
 
 This theme demonstrates how awesome and simple to create web applications using modern frontend frameworks and the power of OctoberCMS.
 
@@ -6,7 +6,7 @@ Theme build on Vue.js and can be configured with UI from backend.
 
 All components are fully responsive without Bootstrap dependency. You can use any of included components or make your own with vue.js or not.
 
-##Available components
+## Available components
 
 - Navigation
 - Promo
