@@ -6,36 +6,41 @@ description = "Section <head></head>"
 function onStart() {}
 ?>
 ==
+{% set appColor = '#2b3e50' %}
+{% set appName  = 'Juicy' %}
+
+{# Meta #}
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-<link rel="manifest" href="{{ 'manifest.json' | theme }}">
-<meta name="theme-color" content="{{ this.theme.site_color }}">
+{# Manifest #}
+{#<link rel="manifest" href="{{ 'manifest.json' | theme }}">#}
 
+{# Meta Tags #}
 <title>{% if this.page.meta_title %}{{ this.page.meta_title }}{% else %}{{ this.page.title }}{% endif %}</title>
 <meta name="description" content="{% if this.page.meta_description %}{{ this.page.meta_description }}{% else %}{{ this.page.description }}{% endif %}">
 
 {# Open Graph #}
 <meta property = "og:description" content = "{% if this.page.meta_description %}{{ this.page.meta_description }}{% else %}{{ this.page.description }}{% endif %}">
-<meta property = "og:image"       content = "{% if ogImage %}{{ ogImage }}{% else %}{{ this.theme.getPreviewImageUrl() }}{% endif %}">
+<meta property = "og:image"       content = "{{ this.theme.getPreviewImageUrl() }}">
 <meta property = "og:locale"      content = "en_EN">
-<meta property = "og:site_name"   content = "{{ this.theme.config.description }}">
+<meta property = "og:site_name"   content = "{{ appName }}">
 <meta property = "og:title"       content = "{% if this.page.meta_title %}{{ this.page.meta_title }}{% else %}{{ this.page.title }}{% endif %}">
 <meta property = "og:type"        content = "website">
 <meta property = "og:url"         content = "/">
 
-{# STYLES #}
-<link href="{{ '/assets/styles/vendor.css' | theme }}" rel="stylesheet" async>
-<link href="{{ '/assets/styles/app.css' | theme }}" rel="stylesheet">
+{# Styles #}
+<link href="{{ 'assets/styles/vendor.css' | theme }}" rel="stylesheet" async>
+<link href="{{ 'assets/styles/app.css' | theme }}" rel="stylesheet">
 
-{# COMPONENTS STYLES #}
+{# Components Styles #}
 {% if styles %}{% styles %}{% endif %}
 
-{# ICONS #}
+{# Icons #}
 <link rel="shortcut icon" href="{{ 'assets/icons/favicon.ico' | theme }}" type="image/x-icon">
-<meta name="application-name"                content="{{ this.theme.config.name }}">
-<meta name="msapplication-TileColor"         content="{{ this.theme.site_color }}">
+<meta name="application-name"                content="{{ appName }}">
+<meta name="msapplication-TileColor"         content="{{ appColor}}">
 <meta name="msapplication-TileImage"         content="{{ 'assets/icons/mstile-144x144.png' | theme }}">
 <meta name="msapplication-square70x70logo"   content="{{ 'assets/icons/mstile-70x70.png' | theme }}">
 <meta name="msapplication-square150x150logo" content="{{ 'assets/icons/mstile-150x150.png' | theme }}">

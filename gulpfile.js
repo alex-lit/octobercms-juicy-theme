@@ -238,6 +238,7 @@ if (project.path()) {
     ]);
     gulp.task('build', [
         'htm',
+        'css--base64',
         'js--build--vendor',
         'js--build--webpack',
         'fonts',

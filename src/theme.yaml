@@ -37,7 +37,6 @@ form:
                 type: mediafinder
                 mode: image
                 comment:
-                default: /components/navigation/navigation-1.png
                 tab: Navigation
 
             #Promo

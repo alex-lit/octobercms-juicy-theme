@@ -7,13 +7,13 @@ description = "Скрипты в конце шаблона"
 function onStart() {}
 ?>
 ==
-{# SCRIPTS #}
 
+{# Scripts #}
 <script src="{{ 'assets/scripts/vendor.js' | theme }}"></script>
 <script src="{{ 'assets/scripts/app.js' | theme }}"></script>
 
-{# RAMEWORK EXTRAS #}
+{# Framework Extras #}
 {#{% framework extras %}#}
 
-{# COMPONENTS SCRIPTS #}
+{# Components Scripts #}
 {% if scripts %}{% scripts %}{% endif %}
